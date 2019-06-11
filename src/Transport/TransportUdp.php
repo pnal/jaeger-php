@@ -48,10 +48,6 @@ class TransportUdp implements Transport
 
     public function __construct(string $host, int $port, int $maxPacketSize = 0)
     {
-        if (!inet_pton($host)) {
-            throw new \InvalidArgumentException('$host is invalid');
-        }
-
         if ($port <= 0) {
             throw new \InvalidArgumentException('$port is invalid');
         }
